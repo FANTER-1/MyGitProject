@@ -1,0 +1,10 @@
+{% extends 'default_1.html' %}
+
+{% block content %}
+    <h2>Список новостей</h2>
+    {% for item in news %}
+        <h3>{{ item.title | censor }}</h3>
+        <p>{{ item.publish_date }}</p>
+        <p>{{ item.text[:20] | censor }}</p>
+    {% endfor %}
+{% endblock %}
